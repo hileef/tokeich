@@ -1,0 +1,21 @@
+[package]
+name = "tokeich"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = true
+
+[dependencies]
+anyhow = "1.0.72"
+kube = { version = "0.84.0", features = [ "config" ], default-features = false }
+k8s-openapi = { version = "0.18.0", features = ["v1_25"], default-features = false }
+clap = { version = "4.3.19", features = ["derive"] }
+serde = "1.0.178"
+serde_json = "1.0.104"
+serde_yaml = "0.9.25"
+directories = "5.0.1"
+blake3 = "1.4.1"
+base64 = "0.21.2"
